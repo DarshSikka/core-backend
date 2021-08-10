@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+</head>
+<body>
+blabla.html
+<script>
+	fetch("/posts/new", {
+	method: "POST", 
+	headers:{
+	"Content-Type":"application/json", 
+	},
+	body:JSON.stringify({
+		title: "Ram charit manas",
+		description: "Pul made over lanka",
+		author: {
+			username: 'Hello Kitty',
+			email: "hellokitty@kitty.org",
+			name: "Kitty.hell"
+		},
+		video: "https://youtu.be/YIrnol2D4Sk"
+	})}).then(resp=>resp.json()).then(res=>console.log(res));
+</script>
+</body>
+</html>
