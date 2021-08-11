@@ -4,7 +4,7 @@ const app = express();
 const posts = require("./routes/posts");
 const cors=require("cors");
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: "20mb"}));
 const User = require("./models/User");
 const Auth = require("./routes/auth");
 app.use(express.static("static"));
@@ -24,6 +24,6 @@ mongoose.connect(
 );
 const port = process.env.PORT || 5000;
 app.get("/", (req, res) => {
-  res.send(req.query.msg || "Hello World");
+  res.send(req.query.msg || "Latest update:- views feature");
 });
 app.listen(port, console.log(`listening on port ${port}`));
